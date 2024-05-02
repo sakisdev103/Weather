@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Search from "./components/Search";
+import TemperatureData from "./components/TemperatureData";
+import TemperatureDataDaily from "./components/TemperatureDataDaily";
+import Widget from "./components/Widget";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-function App() {
+const theme = createTheme({
+  palette: {
+    background: {
+      default: "#1976d2",
+    },
+    text: {
+      primary: "#fff",
+    },
+  },
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container sx={{ backgroundColor: "secondary" }} maxWidth="md">
+          <Search />
+          <Widget />
+          <TemperatureData />
+          <TemperatureDataDaily />
+        </Container>
+      </ThemeProvider>
+    </React.Fragment>
   );
-}
+};
 
 export default App;
