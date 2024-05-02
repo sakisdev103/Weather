@@ -16,7 +16,7 @@ const TemperatureData = ({ data }) => {
             <TableRow>
               {data.list.map((item) => {
                 return (
-                  <TableCell component="th" scope="row">
+                  <TableCell component="th" scope="row" key={item.dt}>
                     <Typography>{item.dt_txt.slice(11, 16)}</Typography>
                     <img
                       src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}

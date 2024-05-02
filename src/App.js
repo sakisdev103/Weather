@@ -19,6 +19,8 @@ const theme = createTheme({
   },
 });
 
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
 const App = () => {
   const [data, setData] = useState(null);
   const [forecast, setForecast] = useState(null);
@@ -26,7 +28,7 @@ const App = () => {
   const getCurrentWeather = (city) => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=7ebf03ca6cdbc891cfccdb8c6bb7d351`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
       )
       .then((resp) => {
         console.log(resp.data);
@@ -38,7 +40,7 @@ const App = () => {
   const getForecast = (city) => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=9&appid=7ebf03ca6cdbc891cfccdb8c6bb7d351`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=9&appid=${API_KEY}`
       )
       .then((resp) => {
         console.log(resp.data);
