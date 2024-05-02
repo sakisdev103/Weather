@@ -7,7 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const TemperatureData = () => {
+const TemperatureData = ({ data }) => {
   return (
     <React.Fragment>
       <TableContainer component={Paper} sx={{ mt: 3, bgcolor: "#03a9f4" }}>

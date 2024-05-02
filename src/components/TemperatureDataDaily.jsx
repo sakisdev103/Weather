@@ -7,30 +7,32 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const TemperatureDataDaily = () => {
+const TemperatureDataDaily = ({ data }) => {
   return (
     <React.Fragment>
       <TableContainer component={Paper} sx={{ mt: 3, bgcolor: "#03a9f4" }}>
         <Table>
           <TableBody>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography>Date</Typography>
-                <Typography>Date</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>humidity</Typography>
-                <Typography>humidity</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>icon</Typography>
-                <Typography>icon</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>min / max temp</Typography>
-                <Typography>min / max temp</Typography>
-              </TableCell>
-            </TableRow>
+            {data.daily.map((day) => {
+              return (
+                <TableRow>
+                  <TableCell component="th" scope="row">
+                    <Typography>{day.dt}</Typography>
+                  </TableCell>
+                  <TableCell component="th" scope="row">
+                    <Typography>{`${day.humidity}%`}</Typography>
+                  </TableCell>
+                  <TableCell component="th" scope="row">
+                    <img
+                      src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
+                    />
+                  </TableCell>
+                  <TableCell component="th" scope="row">
+                    <Typography>{`${day.temp.min.toFixed()}°C ${day.temp.max.toFixed()}°C`}</Typography>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </TableContainer>

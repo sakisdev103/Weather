@@ -6,6 +6,7 @@ import Widget from "./components/Widget";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import data from "./weatherAPI.json";
 
 const theme = createTheme({
   palette: {
@@ -25,9 +26,9 @@ const App = () => {
         <CssBaseline />
         <Container sx={{ backgroundColor: "secondary" }} maxWidth="md">
           <Search />
-          <Widget />
-          <TemperatureData />
-          <TemperatureDataDaily />
+          <Widget data={data} />
+          <TemperatureData data={data} />
+          <TemperatureDataDaily data={data} />
         </Container>
       </ThemeProvider>
     </React.Fragment>
