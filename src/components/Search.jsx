@@ -18,8 +18,8 @@ const Search = ({
     >
       <InputBase
         sx={{ ml: 1, flex: 1, color: "#000" }}
-        placeholder="Search Google Maps"
-        inputProps={{ "aria-label": "search google maps" }}
+        placeholder="Search City"
+        inputProps={{ "aria-label": "search city" }}
         value={searchLocation}
         onChange={(e) => setSearchLocation(e.target.value)}
       />
