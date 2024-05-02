@@ -14,86 +14,17 @@ const TemperatureData = ({ data }) => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
-              <TableCell component="th" scope="row">
-                <Typography>time</Typography>
-                <Typography>icons</Typography>
-                <Typography>temp</Typography>
-              </TableCell>
+              {data.list.map((item) => {
+                return (
+                  <TableCell component="th" scope="row">
+                    <Typography>{item.dt_txt.slice(11, 16)}</Typography>
+                    <img
+                      src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                    />
+                    <Typography>{`${item.main.temp.toFixed()} °C`}</Typography>
+                  </TableCell>
+                );
+              })}
             </TableRow>
           </TableBody>
         </Table>
