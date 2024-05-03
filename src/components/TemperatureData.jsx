@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Container from "@mui/material/Container";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -24,8 +25,8 @@ const TemperatureData = ({ dataForecast }) => {
             data: dataForecast.list.map((item) => {
               return item.main.temp.toFixed();
             }),
-            borderColor: "#83f28f",
-            backgroundColor: "#83f28f",
+            borderColor: "#fff",
+            backgroundColor: "#fff",
             borderWidth: 2,
           },
         ],
@@ -33,17 +34,22 @@ const TemperatureData = ({ dataForecast }) => {
 
       let options = {
         scales: {
+          x: {
+            display: false,
+            ticks: { display: false },
+          },
           y: {
             beginAtZero: true,
+            display: false,
+
+            ticks: { display: false },
           },
         },
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            labels: {
-              boxWidth: 0,
-            },
+            display: false,
           },
         },
       };
@@ -76,9 +82,9 @@ const TemperatureData = ({ dataForecast }) => {
             </TableRow>
           </TableBody>
         </Table>
-        <div style={{ height: "200px" }}>
+        <Container sx={{ height: "50px" }}>
           <canvas id="myChart"></canvas>
-        </div>
+        </Container>
       </TableContainer>
     </React.Fragment>
   );
