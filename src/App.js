@@ -7,6 +7,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
+import SecondaryData from "./components/SecondaryData";
+import SunData from "./components/SunData";
 
 const theme = createTheme({
   palette: {
@@ -70,7 +72,9 @@ const App = () => {
             <>
               <Widget data={data} />
               <TemperatureData data={forecast} />
-              {/* <TemperatureDataDaily data={data} /> */}
+              {/* <TemperatureDataDaily data={forecast} /> */}
+              <SunData data={data} />
+              <SecondaryData data={data} />
             </>
           )}
         </Container>
