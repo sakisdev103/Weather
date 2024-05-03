@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import sunrise from "../icons/sunrise.png";
 import sunset from "../icons/sunset.png";
+import moment from "moment";
 
 const SunData = ({ data }) => {
   return (
@@ -18,7 +19,10 @@ const SunData = ({ data }) => {
           Sunrise
         </Typography>
         <Typography>
-          {new Date(data.sys.sunrise * 1000).toTimeString().slice(0, 5)}
+          {moment
+            .utc(data.sys.sunrise, "X")
+            .add(data.timezone, "seconds")
+            .format("HH:mm ")}
         </Typography>
         <img src={sunrise} alt="sunrise" />
       </Grid>
@@ -27,7 +31,10 @@ const SunData = ({ data }) => {
           Sunset
         </Typography>
         <Typography>
-          {new Date(data.sys.sunset * 1000).toTimeString().slice(0, 5)}
+          {moment
+            .utc(data.sys.sunset, "X")
+            .add(data.timezone, "seconds")
+            .format("HH:mm ")}
         </Typography>
         <img src={sunset} alt="sunset" />
       </Grid>
