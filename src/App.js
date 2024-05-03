@@ -71,7 +71,7 @@ const App = () => {
           {data !== null && forecast !== null && (
             <>
               <Widget data={data} />
-              <TemperatureData data={forecast} />
+              <TemperatureData dataForecast={forecast} />
               {/* <TemperatureDataDaily data={forecast} /> */}
               <SunData data={data} />
               <SecondaryData data={data} />
