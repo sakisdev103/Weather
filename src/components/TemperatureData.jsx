@@ -59,7 +59,7 @@ const TemperatureData = ({ dataForecast }) => {
     return () => {
       myChart.destroy();
     };
-  }, []);
+  }, [dataForecast]);
 
   return (
     <React.Fragment>
