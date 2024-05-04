@@ -8,11 +8,6 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 const TemperatureDataDaily = ({ data }) => {
-  const timeConversion = (unix_time) => {
-    let date = new Date(unix_time * 1000);
-    console.log(date.toTimeString);
-    return date.toTimeString;
-  };
   return (
     <React.Fragment>
       <TableContainer component={Paper} sx={{ mt: 3, bgcolor: "#03a9f4" }}>

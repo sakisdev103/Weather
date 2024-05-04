@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import SecondaryData from "./components/SecondaryData";
 import SunData from "./components/SunData";
+import ChartData from "./components/ChartData";
 
 const theme = createTheme({
   palette: {
@@ -42,7 +43,7 @@ const App = () => {
   const getForecast = (city) => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=9&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
       )
       .then((resp) => {
         console.log(resp.data);
@@ -72,6 +73,7 @@ const App = () => {
             <>
               <Widget data={data} />
               <TemperatureData dataForecast={forecast} />
+              <ChartData dataForecast={forecast} />
               {/* <TemperatureDataDaily data={forecast} /> */}
               <SunData data={data} />
               <SecondaryData data={data} />

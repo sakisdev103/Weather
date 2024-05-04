@@ -18,6 +18,7 @@ const Widget = ({ data }) => {
       <Grid item xs={4}>
         <img
           src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+          alt="weather"
         />
       </Grid>
     </Grid>
