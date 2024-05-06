@@ -11,7 +11,7 @@ const SecondaryData = ({ data }) => {
       align="center"
       justify="center"
       alignItems="center"
-      sx={{ mt: 3, p: 3, bgcolor: "#03a9f4", borderRadius: 1 }}
+      sx={{ mt: 2, p: 2, bgcolor: "#03a9f4", borderRadius: 1 }}
     >
       <Grid item xs={6}>
         <img src={humidity} alt="humidity" />

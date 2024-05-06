@@ -10,19 +10,23 @@ import Typography from "@mui/material/Typography";
 const TemperatureData = ({ dataForecast }) => {
   return (
     <React.Fragment>
-      <TableContainer component={Paper} sx={{ mt: 3, bgcolor: "#03a9f4" }}>
+      <TableContainer component={Paper} sx={{ mt: 2, bgcolor: "#03a9f4" }}>
         <Table>
           <TableBody>
             <TableRow>
-              {dataForecast.list.map((item) => {
+              {dataForecast.list.slice(0, 9).map((item) => {
                 return (
-                  <TableCell component="th" scope="row" key={item.dt}>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    key={item.dt}
+                    align="center"
+                  >
                     <Typography>{item.dt_txt.slice(11, 16)}</Typography>
                     <img
                       src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
                     />
                     <Typography>{`${item.main.temp.toFixed()} °C`}</Typography>
-                    {/* <Typography>{`${item.main.humidity}%`}</Typography> */}
                   </TableCell>
                 );
               })}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Search from "./components/Search";
 import TemperatureData from "./components/TemperatureData";
-import TemperatureDataDaily from "./components/TemperatureDataDaily";
 import Widget from "./components/Widget";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
@@ -34,7 +33,7 @@ const App = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
       )
       .then((resp) => {
-        console.log(resp.data);
+        // console.log(resp.data);
         setData(resp.data);
       })
       .catch((error) => console.log(error));
@@ -46,7 +45,7 @@ const App = () => {
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
       )
       .then((resp) => {
-        console.log(resp.data);
+        // console.log(resp.data);
         setForecast(resp.data);
       })
       .catch((error) => console.log(error));
@@ -63,7 +62,7 @@ const App = () => {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Container sx={{ backgroundColor: "secondary" }} maxWidth="md">
+        <Container maxWidth="md">
           <Search
             handleSearchLocation={handleSearchLocation}
             searchLocation={searchLocation}
@@ -73,10 +72,9 @@ const App = () => {
             <>
               <Widget data={data} />
               <TemperatureData dataForecast={forecast} />
-              <ChartData dataForecast={forecast} />
-              {/* <TemperatureDataDaily data={forecast} /> */}
               <SunData data={data} />
               <SecondaryData data={data} />
+              <ChartData dataForecast={forecast} />
             </>
           )}
         </Container>
