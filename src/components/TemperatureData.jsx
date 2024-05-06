@@ -31,6 +31,7 @@ const TemperatureData = ({ dataForecast }) => {
                     </Typography>
                     <img
                       src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                      alt="weather"
                     />
                     <Typography>{`${item.main.temp.toFixed()} °C`}</Typography>
                   </TableCell>
