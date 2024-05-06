@@ -5,8 +5,14 @@ import PlaceIcon from "@mui/icons-material/Place";
 
 const Widget = ({ data }) => {
   return (
-    <Grid container sx={{ mt: 2, p: 3, bgcolor: "#03a9f4", borderRadius: 1 }}>
-      <Grid item xs={8}>
+    <Grid
+      container
+      align="center"
+      justify="center"
+      alignItems="center"
+      sx={{ mt: 2, p: 3, bgcolor: "#03a9f4", borderRadius: 1 }}
+    >
+      <Grid item xs={6}>
         <Typography variant="h6" sx={{ mb: 1 }}>
           {`${data.name}, ${data.sys.country}`}
           <PlaceIcon />
@@ -16,7 +22,7 @@ const Widget = ({ data }) => {
         >{`${data.main.temp.toFixed()} °C`}</Typography>
         <Typography>{`Feels like ${data.main.feels_like.toFixed()} °C`}</Typography>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={6}>
         <img
           src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
           alt="weather"
