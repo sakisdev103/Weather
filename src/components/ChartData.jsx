@@ -136,7 +136,8 @@ const ChartData = ({ dataForecast }) => {
     <Container
       sx={{
         mt: 2,
-        pt: 3,
+        py: 3,
+        mb: 5,
         bgcolor: "#03a9f4",
         borderRadius: 1,
         height: "400px",
