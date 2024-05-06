@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import moment from "moment";
 
 const TemperatureData = ({ dataForecast }) => {
   return (
@@ -22,7 +23,12 @@ const TemperatureData = ({ dataForecast }) => {
                     key={item.dt}
                     align="center"
                   >
-                    <Typography>{item.dt_txt.slice(11, 16)}</Typography>
+                    <Typography>
+                      {moment
+                        .utc(item.dt, "X")
+                        .add(dataForecast.city.timezone, "seconds")
+                        .format("HH:mm ")}
+                    </Typography>
                     <img
                       src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
                     />
