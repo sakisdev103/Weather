@@ -36,8 +36,8 @@ const ChartData = ({ dataForecast }) => {
               .map((item) => {
                 return item.main.temp.toFixed();
               }),
-            borderColor: "#eceff1",
-            backgroundColor: "#eceff1",
+            borderColor: "#001822",
+            backgroundColor: "#001822",
             borderWidth: 2,
           },
           {
@@ -49,8 +49,8 @@ const ChartData = ({ dataForecast }) => {
               .map((item) => {
                 return item.main.temp.toFixed();
               }),
-            borderColor: "#4caf50",
-            backgroundColor: "#4caf50",
+            borderColor: "#F44E03",
+            backgroundColor: "#F44E03",
             borderWidth: 2,
           },
           {
@@ -62,8 +62,8 @@ const ChartData = ({ dataForecast }) => {
               .map((item) => {
                 return item.main.temp.toFixed();
               }),
-            borderColor: "#ffc107",
-            backgroundColor: "#ffc107",
+            borderColor: "#F402A9",
+            backgroundColor: "#F402A9",
             borderWidth: 2,
           },
           {
@@ -75,8 +75,8 @@ const ChartData = ({ dataForecast }) => {
               .map((item) => {
                 return item.main.temp.toFixed();
               }),
-            borderColor: "#ff5722",
-            backgroundColor: "#ff5722",
+            borderColor: "#A8F402",
+            backgroundColor: "#A8F402",
             borderWidth: 2,
           },
           {
@@ -88,8 +88,8 @@ const ChartData = ({ dataForecast }) => {
               .map((item) => {
                 return item.main.temp.toFixed();
               }),
-            borderColor: "#795548",
-            backgroundColor: "#795548",
+            borderColor: "#5d4037",
+            backgroundColor: "#5d4037",
             borderWidth: 2,
           },
         ],
@@ -108,10 +108,16 @@ const ChartData = ({ dataForecast }) => {
             ticks: {
               color: "#fff",
             },
+            grid: {
+              color: "#fff",
+            },
           },
           y: {
-            beginAtZero: true,
+            // beginAtZero: true,
             ticks: {
+              color: "#fff",
+            },
+            grid: {
               color: "#fff",
             },
           },
@@ -133,7 +139,7 @@ const ChartData = ({ dataForecast }) => {
         pt: 3,
         bgcolor: "#03a9f4",
         borderRadius: 1,
-        height: "300px",
+        height: "400px",
       }}
     >
       <canvas id="myChart"></canvas>
