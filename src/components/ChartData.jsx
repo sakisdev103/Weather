@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Container from "@mui/material/Container";
 import Chart from "chart.js/auto";
+import moment from "moment";
 
 const ChartData = ({ dataForecast }) => {
   let arrDif = [];
@@ -12,6 +13,21 @@ const ChartData = ({ dataForecast }) => {
     }
   };
   calculation(dataForecast.list);
+
+  // console.log(
+  //   dataForecast.list
+  //     .filter((item) => {
+  //       return (
+  //         moment
+  //           .utc(item.dt, "X")
+  //           .add(dataForecast.city.timezone, "seconds")
+  //           .format("YYYY-MM-DD") === arrDif[0]
+  //       );
+  //     })
+  //     .map((item) => {
+  //       return item;
+  //     })
+  // );
 
   useEffect(() => {
     let myChart;
@@ -31,7 +47,12 @@ const ChartData = ({ dataForecast }) => {
             label: arrDif[0],
             data: dataForecast.list
               .filter((item) => {
-                return item.dt_txt.slice(0, 10) === arrDif[0];
+                return (
+                  moment
+                    .utc(item.dt, "X")
+                    .add(dataForecast.city.timezone, "seconds")
+                    .format("YYYY-MM-DD") === arrDif[0]
+                );
               })
               .map((item) => {
                 return item.main.temp.toFixed();
@@ -44,7 +65,12 @@ const ChartData = ({ dataForecast }) => {
             label: arrDif[1],
             data: dataForecast.list
               .filter((item) => {
-                return item.dt_txt.slice(0, 10) === arrDif[1];
+                return (
+                  moment
+                    .utc(item.dt, "X")
+                    .add(dataForecast.city.timezone, "seconds")
+                    .format("YYYY-MM-DD") === arrDif[1]
+                );
               })
               .map((item) => {
                 return item.main.temp.toFixed();
@@ -57,7 +83,12 @@ const ChartData = ({ dataForecast }) => {
             label: arrDif[2],
             data: dataForecast.list
               .filter((item) => {
-                return item.dt_txt.slice(0, 10) === arrDif[2];
+                return (
+                  moment
+                    .utc(item.dt, "X")
+                    .add(dataForecast.city.timezone, "seconds")
+                    .format("YYYY-MM-DD") === arrDif[2]
+                );
               })
               .map((item) => {
                 return item.main.temp.toFixed();
@@ -70,7 +101,12 @@ const ChartData = ({ dataForecast }) => {
             label: arrDif[3],
             data: dataForecast.list
               .filter((item) => {
-                return item.dt_txt.slice(0, 10) === arrDif[3];
+                return (
+                  moment
+                    .utc(item.dt, "X")
+                    .add(dataForecast.city.timezone, "seconds")
+                    .format("YYYY-MM-DD") === arrDif[3]
+                );
               })
               .map((item) => {
                 return item.main.temp.toFixed();
@@ -83,7 +119,12 @@ const ChartData = ({ dataForecast }) => {
             label: arrDif[4],
             data: dataForecast.list
               .filter((item) => {
-                return item.dt_txt.slice(0, 10) === arrDif[4];
+                return (
+                  moment
+                    .utc(item.dt, "X")
+                    .add(dataForecast.city.timezone, "seconds")
+                    .format("YYYY-MM-DD") === arrDif[4]
+                );
               })
               .map((item) => {
                 return item.main.temp.toFixed();
